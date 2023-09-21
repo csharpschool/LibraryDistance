@@ -1,0 +1,12 @@
+﻿@page "/"
+@using Library.Business.Classes;
+@inject BookBusiness bb;
+
+<h1>Bookstore</h1>
+
+<ul>
+    @foreach(var book in bb.Books)
+    {
+        <li>@book.ISBN @book.Title</li>
+    }
+</ul>
