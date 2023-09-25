@@ -1,5 +1,6 @@
 using Library.App;
 using Library.Business.Classes;
+using Library.Common.Classes;
 using Library.Common.Interfaces;
 using Library.Data.Classes;
 using Microsoft.AspNetCore.Components.Web;
@@ -10,8 +11,9 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+builder.Services.AddScoped<HttpReader>();
 
-builder.Services.AddSingleton<IData, BooksData>();
-builder.Services.AddSingleton<BookBusiness>();
+builder.Services.AddScoped<IData, BooksData>();
+builder.Services.AddScoped<BookBusiness>();
 
 await builder.Build().RunAsync();

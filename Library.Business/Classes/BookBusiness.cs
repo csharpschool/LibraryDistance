@@ -1,4 +1,6 @@
-﻿using Library.Common.Interfaces;
+﻿using Library.Common.Classes;
+using Library.Common.Interfaces;
+using System.Reflection.PortableExecutable;
 
 namespace Library.Business.Classes;
 
@@ -12,4 +14,10 @@ public class BookBusiness
     }
 
     public List<IBook> Books => _data.GetBooks();
+
+
+    public async Task LoadBookData()
+    {
+        await _data.LoadBookData();
+    }
 }

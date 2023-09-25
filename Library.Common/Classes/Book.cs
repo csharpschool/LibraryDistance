@@ -9,19 +9,19 @@ namespace Library.Common.Classes
 {
     public class Book : IBook
     {
-        public int Id { get; init; }
-        public string ISBN { get; init; }
+        public int Id { get; set; }
+        public string ISBN { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
 
         public void Change(string title, string descr) =>
             (Title, Description) = (title, descr);
 
-        public Book(int id, string isbn, string title, string descr)
+        public Book(int id, string isbn, string title, string description)
         {
             Id = id;
             ISBN = isbn;
-            Change(title, descr);
+            Change(title, description);
         }
 
         public int TurnPage()

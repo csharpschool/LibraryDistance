@@ -3,4 +3,5 @@
 public interface IData
 {
     public List<IBook> GetBooks();
+    Task LoadBookData();
 }

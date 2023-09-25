@@ -10,3 +10,11 @@
         <li>@book.ISBN @book.Title</li>
     }
 </ul>
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        await bb.LoadBookData();
+    }
+}
